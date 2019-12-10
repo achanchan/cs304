@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<form action="" method="POST">
+    <fieldset>
+        <legend>Select from Incomplete Movies</legend>
+    <select style="width: 30%;" name="menu-tt">
+        {% for i in movies %}
+        <option value = {{i['tt']}}>
+            {{ i['title'] }}
+        </option>
+        {% endfor %}
+    </select>
+    <input type="submit" name="submit" value="Choose">
+    </fieldset>
+</form>
+
+{% endblock %}

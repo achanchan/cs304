@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name=author content="Svetha Pulavarty, Amy Chan">
+    <title>{{ page_title }}</title>
+    <link rel='stylesheet' href="{{url_for('static', filename = 'style.css')}}">
+</head>
+<body>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div id="messages">
+        {% for msg in messages %}
+            <p>{{msg}}</p>
+        {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+<nav id="site-nav">
+    <ul>
+        <a href= {{url_for('index')}}>
+            <li>Home</li></a>
+        <a href= {{url_for('insert')}}>
+            <li>Insert Movie</li></a>
+        <a href= {{url_for('search')}}>
+            <li>Search by Title</li></a>
+        <a href= {{url_for('select')}}>
+            <li>Select from Incomplete Movies</li></a>
+    </ul>
+</nav>
+
+{% block main_content %}
+
+{% endblock %}
+
+</body>
+</html>

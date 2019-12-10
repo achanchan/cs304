@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<form action="" method="POST">
+    <fieldset>
+        <legend>Update a Movie</legend>
+    <label>Movie id/tt: 
+        <input type="text" name="movie-tt" value={{defaultform.tt}}></label> <br>
+    <label>Movie title: 
+        <input type="text" name="movie-title" value={{defaultform.title}}></label><br>
+    <label>Movie release year: 
+        <input type="text" name="movie-release" value={{defaultform.release}}></label><br>
+    <label>Movie director id: 
+        <input type="text" name="movie-director" value={{defaultform.director}}></label><br>
+    <label>Movie addedby: 
+        <input type="text" name="movie-addedby" value={{defaultform.addedby}}></label><br>
+    <label>Movie director: {{defaultform['name']}}</label><br>
+    <input type="submit" name="submit" value="update">
+    <input type="submit" name="submit" value="delete">
+    </fieldset>
+</form>
+
+{% endblock %}
